@@ -20,10 +20,12 @@ function loadAnnouncements() {
     })
     items = []
     for (const announcement of announcements) {
-      const w = announcement.content.length > 50 ? ' wide' : ''
-      items.push(
-        `<div class="item one${w}"><div class="item-text">${announcement.content}</div></div>`
-      )
+      if (announcement.content.length) {
+        const w = announcement.content.length > 50 ? ' wide' : ''
+        items.push(
+          `<div class="item one${w}"><div class="item-text">${announcement.content}</div></div>`
+        )
+      }
     }
     if (fadeTime) clearTimeout(fadeTime)
     if (displayTime) clearTimeout(displayTime)
@@ -38,10 +40,18 @@ function fade() {
     a.style.opacity = a.style.opacity == 1 ? 0 : 1
     state = a.style.opacity == 1 ? true : false
   }
-  if (state) {
-    fadeTime = setTimeout(fade, 10000)
+  if (ans.length === items.length) {
+    if (!state) {
+      for (let a of ans) {
+        a.style.opacity = 1
+      }
+    }
   } else {
-    displayTime = setTimeout(displayItems, 1000)
+    if (state) {
+      fadeTime = setTimeout(fade, 10000)
+    } else {
+      displayTime = setTimeout(displayItems, 1000)
+    }
   }
 }
 
