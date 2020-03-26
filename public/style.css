@@ -2,33 +2,73 @@
 
 body {
   font-family: Arvo, serif;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
 }
 
 .announcements {
-  /* align-content: stretch; */
-  /* align-items: stretch; */
+  align-content: stretch;
+  background: #fff;
   display: flex;
+  grid-column: 1 / span 2; /*span 2;*/
   flex-wrap: wrap;
-  /* justify-content: space-evenly; */
+  overflow-y: hidden;
+  padding: 1vw;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /* grid-template-rows: 1fr; */
+  height: 100vh;
+  width: 100vw;
 }
 
 .item {
-  background: green;
-  border: 4px dashed yellow;
-  color: magenta;
-  /* flex: 2 1; */
-  /* flex-grow: 1; */
-  font-size: 2em;
-  margin: 2vw;
-  /* max-height: 33vh; */
+  color: #fff;
+  display: flex;
+  flex: 1 0 25vw;
+  font-size: 3em;
+  margin: 1vw;
+  opacity: 0;
   padding: 2vw;
   text-align: center;
+  transition: opacity 1s ease;
 }
 
-.one {
+.item-text {
+  align-self: center;
   flex-grow: 1;
 }
 
+.wide {
+  flex: 1 1 auto;
+}
+
+.one {
+  background: #790000;
+}
+
 .two {
-  flex-grow: 2;
+  background: #f1e2a0;
+}
+
+.three {
+  background: #90badd;
+}
+
+.four {
+  background: #df9056;
+}
+
+.five {
+  background: #c89804;
+}
+
+.notifications {
+  background: #959595;
+  display: none;
+  grid-column: 2 / 2;
+  overflow: auto;
 }
