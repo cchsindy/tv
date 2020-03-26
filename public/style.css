@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo|Oswald&display=swap');
+
+body {
+  font-family: Arvo, serif;
+}
+
+.announcements {
+  /* align-content: stretch; */
+  /* align-items: stretch; */
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-evenly; */
+}
+
+.item {
+  background: green;
+  border: 4px dashed yellow;
+  color: magenta;
+  /* flex: 2 1; */
+  /* flex-grow: 1; */
+  font-size: 2em;
+  margin: 2vw;
+  /* max-height: 33vh; */
+  padding: 2vw;
+  text-align: center;
+}
+
+.one {
+  flex-grow: 1;
+}
+
+.two {
+  flex-grow: 2;
+}
