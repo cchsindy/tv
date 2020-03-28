@@ -1,5 +1,7 @@
 let announcements = []
 let items = []
+let notifications = []
+let notes = []
 let fadeTime, displayTime
 
 function loadAnnouncements() {
@@ -31,6 +33,33 @@ function loadAnnouncements() {
     if (displayTime) clearTimeout(displayTime)
     fade()
   })
+  db.collection('notifications')
+    .orderBy('student')
+    .onSnapshot(snapshot => {
+      notifications = []
+      snapshot.forEach(doc => {
+        notifications.push(doc.data())
+      })
+      const n = document.querySelector('.notifications')
+      const a = document.querySelector('.announcements')
+      if (notifications.length > 0) {
+        a.style.gridColumn = '1 / 1'
+        n.style.display = 'flex'
+      } else {
+        a.style.gridColumn = '1 / span 2'
+        n.style.display = 'none'
+      }
+      notes = []
+      for (const notification of notifications) {
+        notes.push(
+          `<div class="note">${notification.student} to see ${notification.faculty}</div>`
+        )
+      }
+      n.innerHTML = ''
+      notes.forEach(ni => {
+        n.innerHTML += ni
+      })
+    })
 }
 
 function fade() {

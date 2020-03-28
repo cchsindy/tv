@@ -41,6 +41,29 @@ body {
   flex-grow: 1;
 }
 
+.note {
+  background: #fff;
+  border-radius: 1vw;
+  flex-grow: 1;
+  font-size: 1.5em;
+  margin: 1vw 1vw 0 1vw;
+  padding: 1vw;
+  text-align: center;
+}
+
+.note:last-child {
+  margin: 1vw;
+}
+
+.notifications {
+  align-content: flex-start;
+  background: #959595;
+  display: none;
+  flex-wrap: wrap;
+  grid-column: 2 / 2;
+  overflow: auto;
+}
+
 .wide {
   flex: 1 1 auto;
 }
@@ -63,11 +86,4 @@ body {
 
 .five {
   background: #c89804;
-}
-
-.notifications {
-  background: #959595;
-  display: none;
-  grid-column: 2 / 2;
-  overflow: auto;
 }
