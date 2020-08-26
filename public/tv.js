@@ -25,7 +25,7 @@ function loadAnnouncements() {
       if (announcement.content.length) {
         const w = announcement.content.length > 50 ? ' wide' : ''
         items.push(
-          `<div class="item one${w}"><div class="item-text">${announcement.content}</div></div>`
+          `<div class="item ${announcement.category}${w}"><div class="item-text">${announcement.content}</div></div>`
         )
       }
     }
@@ -104,7 +104,7 @@ function displayItems() {
   }
   // check font size
   let ans = document.querySelectorAll('.item')
-  let fs = 2.9
+  let fs = 3.9
   m = 0
   for (let a of ans) {
     m =

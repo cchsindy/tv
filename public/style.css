@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Arvo|Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
 
 body {
-  font-family: Arvo, serif;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
   margin: 0;
   overflow: hidden;
   padding: 0;
@@ -29,7 +30,7 @@ body {
   color: #fff;
   display: flex;
   flex: 1 0 25vw;
-  font-size: 3em;
+  font-size: 4em;
   margin: 1vw;
   opacity: 0;
   padding: 2vw;
@@ -46,7 +47,7 @@ body {
   background: #fff;
   border-radius: 1vw;
   flex-grow: 1;
-  font-size: 1.5em;
+  font-size: 2em;
   margin: 1vw 1vw 0 1vw;
   padding: 1vw;
   text-align: center;
@@ -69,22 +70,24 @@ body {
   flex: 1 1 auto;
 }
 
-.one {
-  background: #790000;
+.birthday {
+  background-image: url(fireworks.gif);
+  background-size: cover;
 }
 
-.two {
-  background: #f1e2a0;
+.athletics {
+  background: #4b6931;
 }
 
-.three {
-  background: #90badd;
+.fine-arts {
+  background: #439ab5;
+  /* color: #123; */
 }
 
-.four {
-  background: #df9056;
+.community-clubs {
+  background: #d78833;
 }
 
-.five {
-  background: #c89804;
+.general-academics {
+  background: #771d18;
 }
