@@ -29,6 +29,8 @@ function loadAnnouncements() {
         )
       }
     }
+    const ac = document.querySelector('.announcements')
+    ac.innerHTML = ''
     if (fadeTime) clearTimeout(fadeTime)
     if (displayTime) clearTimeout(displayTime)
     fade()
