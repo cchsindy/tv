@@ -11,6 +11,10 @@ body {
 .announcements {
   align-content: stretch;
   background: #fff;
+  background-image: url('twenty-five.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
   display: flex;
   grid-column: 1 / span 2; /* span 2 or 1 */
   flex-wrap: wrap;
