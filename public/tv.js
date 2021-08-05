@@ -65,6 +65,7 @@ function loadAnnouncements() {
       notes.forEach((ni) => {
         n.innerHTML += ni
       })
+      if (scrollTime) clearInterval(scrollTime)
       scrollTime = setInterval(scroll, 100)
     })
 }
