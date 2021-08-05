@@ -68,7 +68,7 @@ body {
   flex-wrap: wrap;
   font-weight: 600;
   grid-column: 2 / 2;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .wide {

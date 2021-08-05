@@ -2,7 +2,11 @@ let announcements = []
 let items = []
 let notifications = []
 let notes = []
-let fadeTime, displayTime
+let n,
+  fadeTime,
+  displayTime,
+  scrollTime,
+  scrollInc = 1
 
 function loadAnnouncements() {
   firebase.initializeApp({
@@ -12,12 +16,12 @@ function loadAnnouncements() {
     projectId: 'my-covenant',
     storageBucket: 'my-covenant.appspot.com',
     messagingSenderId: '945207168321',
-    appId: '1:945207168321:web:e42d0845df84c8c24e65c0'
+    appId: '1:945207168321:web:e42d0845df84c8c24e65c0',
   })
   const db = firebase.firestore()
-  db.collection('announcements').onSnapshot(snapshot => {
+  db.collection('announcements').onSnapshot((snapshot) => {
     announcements = []
-    snapshot.forEach(doc => {
+    snapshot.forEach((doc) => {
       announcements.push(doc.data())
     })
     items = []
@@ -37,12 +41,12 @@ function loadAnnouncements() {
   })
   db.collection('notifications')
     .orderBy('student')
-    .onSnapshot(snapshot => {
+    .onSnapshot((snapshot) => {
       notifications = []
-      snapshot.forEach(doc => {
+      snapshot.forEach((doc) => {
         notifications.push(doc.data())
       })
-      const n = document.querySelector('.notifications')
+      n = document.querySelector('.notifications')
       const a = document.querySelector('.announcements')
       if (notifications.length > 0) {
         a.style.gridColumn = '1 / 1'
@@ -58,9 +62,10 @@ function loadAnnouncements() {
         )
       }
       n.innerHTML = ''
-      notes.forEach(ni => {
+      notes.forEach((ni) => {
         n.innerHTML += ni
       })
+      scrollTime = setInterval(scroll, 100)
     })
 }
 
@@ -83,6 +88,15 @@ function fade() {
     } else {
       displayTime = setTimeout(displayItems, 1000)
     }
+  }
+}
+
+function scroll() {
+  const soff = n.scrollHeight - n.clientHeight
+  if (soff > 0) {
+    if (n.scrollTop >= soff) scrollInc *= -1
+    if (n.scrollTop <= 0) scrollInc *= -1
+    n.scrollBy(0, scrollInc)
   }
 }
 
