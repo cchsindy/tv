@@ -57,9 +57,11 @@ function loadAnnouncements() {
       }
       notes = []
       for (const notification of notifications) {
-        notes.push(
-          `<div class="note">${notification.student} to see ${notification.faculty}</div>`
-        )
+        if (notification.student.length) {
+          notes.push(
+            `<div class="note">${notification.student} to see ${notification.faculty}</div>`
+          )
+        }
       }
       n.innerHTML = ''
       notes.forEach((ni) => {
