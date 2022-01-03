@@ -1,12 +1,12 @@
 {
   "projects": {
-    "default": "my-covenant"
+    "default": "cchs-9821e"
   },
   "targets": {
-    "my-covenant": {
+    "cchs-9821e": {
       "hosting": {
         "tv": [
-          "announcement-tv"
+          "cchs-tv"
         ]
       }
     }

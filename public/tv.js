@@ -10,13 +10,13 @@ let n,
 
 function loadAnnouncements() {
   firebase.initializeApp({
-    apiKey: 'AIzaSyCg_FVHdzP3kvRAyrnpE2bJUsQfMRUgFW4',
-    authDomain: 'my-covenant.firebaseapp.com',
-    databaseURL: 'https://my-covenant.firebaseio.com',
-    projectId: 'my-covenant',
-    storageBucket: 'my-covenant.appspot.com',
-    messagingSenderId: '945207168321',
-    appId: '1:945207168321:web:e42d0845df84c8c24e65c0',
+    apiKey: 'AIzaSyAZdfrMH61V3Qe0zBF0Zw6K8JMPIaj1RvU',
+    authDomain: 'cchs-9821e.firebaseapp.com',
+    databaseURL: 'https://cchs-9821e.firebaseio.com',
+    projectId: 'cchs-9821e',
+    storageBucket: 'cchs-9821e.appspot.com',
+    messagingSenderId: '1068116259591',
+    appId: '1:1068116259591:web:9a71f9e32ee40af213cba2',
   })
   const db = firebase.firestore()
   db.collection('announcements').onSnapshot((snapshot) => {
